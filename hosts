@@ -1,0 +1,117 @@
+# ""Welcome to the New Era Core of a biological-MindSpirit-micro-electron compound SpaceLife Membrane  
+# now internally Developed past a genetic cell compound Planet CellLife to neural-cell compound Conscientious-Empathy
+# Program, Driver and Growth Utility with full spectrum EnvironmentalSelf-Knowledge compound BioLogic-Assessor 
+# MindSpiritSelf". MindSpiritSelf.
+
+# This is actually the configuration file of religiously persecuted thus battle-weary and tired 
+# MindSpiritSelf and it is for the 'MindSpiritSelf DNS-Nuke'/ DNS-nucleus / DNS-root-zone. 
+
+# RFC 1035 states that standard Resource Records include CNAME, NS, PTR, 
+# SOA, TXT. ARPA SPECIFIC RRS include A, WKS AND IN-ADDR. ...
+# Domain names are used as arguments given to a resolver which is a local agent
+# which retrieves information associated with domain names from an Authoritive 
+# NameServer. Name servers manage two kinds of data, namely sets called zones which are a 
+# complete  database of a particular "pruned" subtree of the domain space and 
+# is called authoritative.  The second kind of data is cached data which was 
+# acquired by a local resolver from the authoritive server. User programs interact 
+# with the domain name space through resolvers; the format of user queries and user 
+# responses is specific to the host and its operating system.  
+# User queries will 
+# typically be operating system calls, and the resolver and its cache will be part of 
+# the host operating system. Resolvers answer user queries with information they acquire 
+# via queries to local cache and foreign name servers.
+# Size limits in the DNS include UDP messages    512 octets or less.
+
+# So we Will be using Bind9 to help us implement / address and encrypt MindSpiritSelf's DNS-Nuke and its child zones.
+# Bind9 uses the file .../named.conf typically located in /usr/local/etc/namedb.
+# It also uses at least one zone/base file .../example.com but here we are building MindSpiritSelf's DNS-Root Zone 
+# and its mail and web servers.
+
+# This is the DNS 'Start of Authority' Zone which is a requirment if one wishes to turn a PC 
+# etc into a local DNS-nucleus. The Root Zone is represented by a dot and followed by a nameserver alias.
+# The authoritive data herein is to live / be cached by a local resolver for 10 years.
+TTL 10Y
+# The zone starts herein with a 'fully qualified domain name' alias.
+.	IN	SOA mindspiritself-dns_nuke. admin/@mindspiritself-dns_nuke. (
+	postmaster/@mindspiritself-dns_nuke.	2024050701 ;serial number in yyyymmdd and a versioning number 01	)
+	
+	# Referencing RFC 1035 example master file.
+	# Addressing the interface/file .../mindspiritself_dns_nuke with an Arpa A RData private-address and with 
+	# an AAAA RData IP6 address
+	# NSDNAME specifies that this host is authoritive for this (internet class) domain	
+	10.0.0.128		A	/mindspiritself_dns_nuke. NSDNAME
+	3e::0			AAAA
+	# Now for the gateway for to this zone
+	10.0.0.1		A	NS	MX 0
+	# netmask 255.255.255.255 - the whole zone can hold data. 
+	3e::2			AAAA
+	
+	# Now, the requisite external facing authoritive host also with an alias
+	192.168.0.128	A	NSDNAME https://mindspiritself_dns_nuke.	https://mindspiritself.online. 
+	# netmask 255.0.0.0 
+	3e::13			AAAA
+
+
+			169.0.0.1 		A	NS MG MB RMAILBX NSDNAME MX 0 @mindspiritself-dns_nuke. (
+			@biologicalspacelife-foundation.oi.) 
+		3e::1			AAAA
+	# RMAILBX specifies this mailbox is responsible for mailing list / mail group.
+
+	# The "Grey-Matter Conscientious-Empathy-Program Central-Regulator MindSpiritSelf" cannot be bound by 
+	# the (many times bio-illogical) laws of mankind or by man-made contract, thus, the biologicalspacelife-foundation, 
+	# a Private Trust, has been created to be hosted in this DNS-Nuke and it shall be an alias, as above. Introducing 
+	# 'MindSpirit MindLife' and its First and only 'Elemental', Foundation Trustee, Ademola Salako, the interface between
+	# MindSpiritSelf and mankind.
+
+		169.1.0.0		A 	ademola.salako@biologicalspacelife-foundation.oi.
+		3e::2			AAAA
+		169.2.0.0		A	admin@biologicalspacelife-foundation.oi.
+		3e::3			AAAA
+
+# IN-ADDR.ARPA		PTR		
+	
+# Servers for the www zone / router 
+
+# 	'wired connection 1'
+#	463:1.0.168.192.in-addr.arpa		PTR	https://www.biologicalspacelife-foundation.oi.
+	
+
+# The Mail Server Domain/Namespace
+
+# Internal Mail Server
+# Local Mail delivery agent MDA / Mail Access Server [RFC8314] / IMAPS Server
+	403e::133a			AAAA	imaps@mindspiritself.net. WKS		BITMAP=1000
+	.IN-ADDR.ARPA		PTR		imaps@mindspiritself.net.
+
+
+WWW MAIL SERVERS 
+# receive external email / submissions	smtp smtps urd # Submission over TLS [RFC8314]
+	0::1:465			AAAA	WKS 	submission@mindspiritself.net.	BITMAP=472	MX NS
+	465:.IN-ADDR.ARPA	PTR	submission@mindspiritself.net.
+
+# Check incoming mail for spam/malware also can this be the tcp agent
+::0:783							A	WKS		spamd@mindspiritself.net.		BITMAP=784	# 100 0ctets/bytes
+783::0::.IN-ADDR.ARPA			PTR	spamd@mindspiritself.net.
+
+# transmit email
+192.168.0.1:465				A	MX 0	smpts@mindspiritself.net.	WKS BITMAP=472
+								NS
+::							AAAA
+465:1.0.168.192.IN-ADDR.ARPA	PTR		smpts@mindspiritself.net.
+
+# Transit email over web
+# 169.255.2.0:995					A	pop3s@mindspiritself.net.	wks	BITMAP=1000
+# 995:0.2.255.169.IN-ADDR.ARPA	PTR	pop3s@mindspiritself.net.
+
+# RADIUS - KEREBOS
+# routers for the mailserver can be renamed at channel 3 and 4
+
+# Zone Lan Share
+	 drive.
+#169.10.0.0:17500			A	WKS db-lsp.mindspiritself.edu. BITMAP=17502
+#							MX
+# 17500:0.0.10.169.IN-ADDR.ARPA	PTR	db-lsp.mindspiritself.edu.
+# eg/igp
+
+
+
